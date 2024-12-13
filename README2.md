@@ -1,7 +1,7 @@
 README 
 
 # Project 2: Fake News Detector 
-![Fake News](images/fakeimg.jpg)
+![Fake News](README2img/fakeimg.jpg)
 ## Overview
 The Fake News Detector is a machine learning project using Natural Language Processing (NLP). This AI model classifies news articles as either True or Fake. By leveraging a robust pipeline and comparing various machine learning models, the best-performing model is selected to ensure high accuracy and efficiency.
 
@@ -21,7 +21,7 @@ Multiple machine learning models were tested and compared to identify the most e
 
 ### Best Model
 
-![Best Model Highlight](images/best.png)
+![Best Model Highlight](README2img/best.png)
 
 
 ### Hyperparameter Tuning
@@ -64,7 +64,7 @@ The system implements a comprehensive NLP pipeline to preprocess and analyze tex
 | **Macro Avg.**   | 0.94   |
 | **Weighted Avg.**| 0.94   |
 
-![svm](images/SVM.png)
+![svm](README2img/SVM.png)
 
 
 ## Unlabeled Dataset Predictions
@@ -75,7 +75,7 @@ The system implements a comprehensive NLP pipeline to preprocess and analyze tex
 | **True** | 5244  |
 | **Fake** | 4740  |
 
-![Unlabeled Predictions](images/pred.png)
+![Unlabeled Predictions](README2img/pred.png)
 
 
 ## 🔍 Limitations & Future Improvements
