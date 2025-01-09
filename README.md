@@ -1,20 +1,90 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+# Clasificador de Traducciones NLP
 
-# Natural Language Processing Challenge
+## Descripción
+Proyecto de procesamiento de lenguaje natural para clasificar traducciones entre automáticas y humanas.
 
-## Introduction
+## Estructura del Proyecto
+```
+.
+├── README.md
+├── requirements.txt
+├── setup.py
+└── src/
+    ├── data/
+    │   ├── TRAINING_DATA.txt
+    │   └── REAL_DATA.txt
+    ├── models/
+    │   └── train_models.py
+    └── notebooks/
+        └── 01_exploratory_analysis.ipynb
+```
 
-Learning how to process text is a skill required for Data Scientists. In this project, you will put these skills into practice to identify whether a sentence was automatically translated or translated by a human.
+## Configuración del Entorno
 
-## Project Overview
+### Prerequisitos
+- Python 3.8 o superior
+- pip (gestor de paquetes de Python)
+- git
 
-In this repository you will find dataset containing sentences in Spanish and their tags: 0, if the sentences was translated by a Machine, 1, if the sentence was translated by a professional translator. Your goal is to build a classifier that is able to distinguish between the two.
+### Pasos de Instalación
 
-## Guidance
-Like in a real life scenario, you are able to make your own choices and text treatment. Use the techniques you have learned and the common packages to process this data and classify the text.
+1. Clonar el repositorio:
+```bash
+git clone <url-del-repositorio>
+cd project-3-nlp
+```
 
-## Deliverables
+2. Crear y activar entorno virtual:
+```bash
+# En Windows:
+python -m venv venv
+venv\Scripts\activate
 
-1. **Python Code:** Provide well-documented Python code that conducts the analysis.
-2. **Accuracy estimation:** Provide the teacher with your estimation of how your model will perform.
-2. **Classified Dataset**: On Friday, you will receive a dataset without tags. Prepare your code to be able to tag that dataset.
+# En macOS/Linux:
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. Instalar dependencias:
+```bash
+pip install -r requirements.txt
+
+# Instalar modelo de spaCy en español
+python -m spacy download es_core_news_md
+```
+
+### Verificación de la Instalación
+```bash
+python
+>>> import spacy
+>>> nlp = spacy.load('es_core_news_md')
+>>> exit()
+```
+
+## Uso del Proyecto
+
+1. **Análisis Exploratorio**:
+   - Abrir Jupyter Notebook:
+   ```bash
+   jupyter notebook src/notebooks/01_exploratory_analysis.ipynb
+   ```
+
+2. **Entrenamiento de Modelos**:
+   ```bash
+   python src/models/train_models.py
+   ```
+
+## Solución de Problemas Comunes
+
+1. **Error con spaCy**:
+   ```bash
+   python -m spacy download es_core_news_md
+   ```
+
+2. **Error con Jupyter**:
+   ```bash
+   pip install notebook
+   ```
+
+## Contacto
+[Jose Ortiz] - [jose.ortiz@ironhack.com]
