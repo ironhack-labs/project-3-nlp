@@ -1,90 +1,85 @@
-# Clasificador de Traducciones NLP
+# Clasificador de Traducciones ML vs Humanas
+
+Este proyecto implementa un clasificador basado en RoBERTa para distinguir entre traducciones realizadas por máquina (ML) y traducciones realizadas por humanos profesionales.
 
 ## Descripción
-Proyecto de procesamiento de lenguaje natural para clasificar traducciones entre automáticas y humanas.
+
+El proyecto utiliza el modelo pre-entrenado RoBERTa-base-bne (Spanish) con fine-tuning específico para la tarea de clasificación de traducciones. El modelo es capaz de analizar textos en español y clasificarlos en dos categorías:
+- Traducción ML (0): Textos traducidos por sistemas de traducción automática
+- Traducción Humana (1): Textos traducidos por traductores profesionales
 
 ## Estructura del Proyecto
+
 ```
-.
-├── README.md
-├── requirements.txt
-├── setup.py
-└── src/
-    ├── data/
-    │   ├── TRAINING_DATA.txt
-    │   └── REAL_DATA.txt
-    ├── models/
-    │   └── train_models.py
-    └── notebooks/
-        └── 01_exploratory_analysis.ipynb
+project-3-nlp/
+│
+├── data/
+│   ├── TRAINING_DATA.txt     # Datos de entrenamiento para fine-tuning
+│   ├── REAL_DATA.txt         # Datos para clasificar
+│   └── resultados_clasificacion.csv  # Resultados de la clasificación
+│
+├── models/
+│   └── roberta_finetuned/    # Modelo fine-tuned guardado
+│
+├── src/
+│   └── notebooks/
+│       ├── 01_exploratory_analysis.ipynb  # Análisis exploratorio
+│       └── Reporte.ipynb     # Reporte de resultados
+│
+└── requirements.txt          # Dependencias del proyecto
 ```
 
-## Configuración del Entorno
+## Requisitos
 
-### Prerequisitos
-- Python 3.8 o superior
-- pip (gestor de paquetes de Python)
-- git
+Para ejecutar este proyecto, necesitas:
 
-### Pasos de Instalación
+```
+torch
+transformers
+pandas
+numpy
+```
 
-1. Clonar el repositorio:
+## Instalación
+
+1. Clona el repositorio:
 ```bash
-git clone <url-del-repositorio>
+git clone [URL-del-repositorio]
 cd project-3-nlp
 ```
 
-2. Crear y activar entorno virtual:
-```bash
-# En Windows:
-python -m venv venv
-venv\Scripts\activate
-
-# En macOS/Linux:
-python3 -m venv venv
-source venv/bin/activate
-```
-
-3. Instalar dependencias:
+2. Instala las dependencias:
 ```bash
 pip install -r requirements.txt
-
-# Instalar modelo de spaCy en español
-python -m spacy download es_core_news_md
 ```
 
-### Verificación de la Instalación
-```bash
-python
->>> import spacy
->>> nlp = spacy.load('es_core_news_md')
->>> exit()
-```
+## Uso
 
-## Uso del Proyecto
+1. **Preparación de datos**:
+   - Coloca los textos a clasificar en `data/REAL_DATA.txt`
+   - Un texto por línea
 
-1. **Análisis Exploratorio**:
-   - Abrir Jupyter Notebook:
-   ```bash
-   jupyter notebook src/notebooks/01_exploratory_analysis.ipynb
-   ```
+2. **Clasificación**:
+   - Abre el notebook `src/notebooks/01_exploratory_analysis.ipynb`
+   - Ejecuta las celdas para cargar el modelo y realizar predicciones
+   - Los resultados se guardarán en `data/resultados_clasificacion.csv`
 
-2. **Entrenamiento de Modelos**:
-   ```bash
-   python src/models/train_models.py
-   ```
+## Modelo
 
-## Solución de Problemas Comunes
+El proyecto utiliza RoBERTa-base-bne, un modelo de lenguaje pre-entrenado para español, con fine-tuning específico para la tarea de clasificación de traducciones. El modelo fine-tuned se guarda localmente en la carpeta `models/roberta_finetuned/`.
 
-1. **Error con spaCy**:
-   ```bash
-   python -m spacy download es_core_news_md
-   ```
+## Resultados
 
-2. **Error con Jupyter**:
-   ```bash
-   pip install notebook
-   ```
+Los resultados de la clasificación incluyen:
+- Texto original
+- Texto procesado
+- Predicción (0 o 1)
+- Tipo de traducción (ML o Humana)
 
-## Contacto
-[Jose Ortiz] - [jose.ortiz@ironhack.com]
+## Contribuciones
+
+Las contribuciones son bienvenidas. Por favor, abre un issue primero para discutir los cambios que te gustaría hacer.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE para más detalles. 

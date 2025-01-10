@@ -1,0 +1,12 @@
+Accuracy: 0.6269574944071589
+Best Loss: 0.12564438558131524
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.61      0.64      0.63      1751
+           1       0.64      0.61      0.63      1825
+
+    accuracy                           0.63      3576
+   macro avg       0.63      0.63      0.63      3576
+weighted avg       0.63      0.63      0.63      3576
